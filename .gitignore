@@ -1,0 +1,6 @@
+# Platforms
+/platforms/android/*
+/platforms/ios/*
+
+#Plugins
+/plugins/cordova-plugin-whitelist
