@@ -1,3 +1,9 @@
+Node version: v4.3.1
+
+Cordova version: 6.4.0
+
+Config.xml file: 
+
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.cordova.app" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Cordova App</name>
@@ -25,3 +31,16 @@
     </platform>
     <engine name="android" spec="~6.0.0" />
 </widget>
+
+
+Plugins: 
+
+cordova-plugin-whitelist
+
+Error retrieving Android platform information: 
+Android SDK is not set up properly. Make sure that the Android SDK 'tools' and 'platform-tools' directories are in the PATH variable. 
+
+Error: cmd: Command failed with exit code 1 Error output:
+"android" no se reconoce como un comando interno o externo,
+programa o archivo por lotes ejecutable.
+

@@ -4,3 +4,11 @@
 
 #Plugins
 /plugins/cordova-plugin-whitelist
+
+logs/*
+!.gitkeep
+node_modules/
+www/bower_components/
+tmp
+.DS_Store
+.idea
