@@ -2,34 +2,15 @@
 
 angular.module('myApp.users')
 
-.controller('UsersCtrl', ['$scope', '$q', function($scope, $q) {
+.controller('UsersCtrl', ['$scope', 'UsersService', function($scope, UsersService) {
   $scope.message = 'This is the user\'s view';
   
   $scope.response = null;
+  $scope.response2 = null;
 
-  function executeProcess(name) {
-    var deferred = $q.defer();
+  var process = Math.floor((Math.random() * 9) + 1);
 
-    setTimeout(function() {
-      deferred.notify('Executing process ' + name + '...');
-
-      if (name >= 5) {
-        setTimeout(function() {
-          deferred.resolve('Process ' + name + ' executed!');
-        }, 5000);
-      } else {
-        setTimeout(function() {
-          deferred.reject('Process ' + name + ' not executed!');
-        }, 3000);  
-      }
-    }, 1000);
-
-    return deferred.promise;
-  };
-
-  var process = Math.floor((Math.random() * 10) + 1);
-
-  executeProcess(process).then(
+  UsersService.executeProcess(process).then(
     function(data) {
       //alert('Success: ' + data);
       $scope.response = 'Success: ' + data;
@@ -46,4 +27,18 @@ angular.module('myApp.users')
       console.log($scope.response);
     }
   );
+
+  process = Math.floor((Math.random() * 9) + 1);
+
+  UsersService.executeProcess(process).then(
+    function(data) {
+      $scope.response2 = 'Success: ' + data;
+    },
+    function(data) {
+      $scope.response2 = 'Failed: ' + data;
+    },
+    function(data) {
+      $scope.response2 = data;
+    }
+  );  
 }]);
